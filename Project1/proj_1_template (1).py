@@ -52,10 +52,11 @@ while True:
         print("Username taken")
         continue
 
-    # if username[0].islower() == True:
-    #     print("is lower true")
-    # else: 
-    #     print("is lower false")
+    if username[0].islower() == False:              # test for first character lower case
+       print("Invalid username")
+       continue
+
+    print("I am here")
 
 
 
