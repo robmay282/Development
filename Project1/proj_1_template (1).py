@@ -11,11 +11,86 @@ If they are both valid, store them as variables. Then ask the user to log in usi
 # Solution: Your program should start with a print statement clearly explaining to the user both the username and password requirements. 
 # Test, push code, test push code, test push code :)
 
+# print("Please follow these requirements when creating your account. \n"
+#                      "USERNAME REQUIREMENTS: \n"
+#                      "-Must start with a lowercase letter. \n" 
+#                      "-Only contain letters, numbers and underscores. \n\n" 
+                     
+#                      "PASSWORD REQUIREMENTS:\n"
+#                      "-Contain at least 8 characters.\n"
+#                      "-Contain at least one uppercase letter.\n"
+#                     "-Contain at least one lowercase letter.\n"
+#                      "-Contain at least one digit.\n"
+#                      "-Contain at least one of these characters: !, ?, @, #, $, ^, &, *, _, -, \n"
+#                      "-Doesn't contain any spaces")
+
+
+# Define error messages
+
+# Set invalid username error message as a variable
+# invalid_username = "Invalid username"
+
+# Set username taken error message as a variable
+# duplicate_username = "Username taken"
 
 
 # Problem: The user must be continuously prompted for input.
 # Solution(s): What tools do we have in place to facilitate this? If-then-else statements in conjunction with a while loop. 
 # Test, push code, test push code, test push code :)
+
+
+
+while True:
+
+    username = input('Please enter a username: ')   # get username
+    password = input('Please enter a password: ')   # get password 
+    taken_names = ['admin', 'admin123', 'root']     # taken name list
+    # print(username)
+    # print(password)
+    # break
+    if username in taken_names:                     # username test if already taken
+        print("Username taken")
+        continue
+
+    # if username[0].islower() == True:
+    #     print("is lower true")
+    # else: 
+    #     print("is lower false")
+
+
+
+    # print(no is not lower) # does username start with lowercase letter?
+#         new_string += user_string
+#         print("username starts with lowercase letter.")
+#         print(new_string)
+#         continue
+
+
+
+    # if len(user_string) == 0: # if the string is empty, stop the loop
+    #     print("Invalid username")
+    #     break # we are done
+#     elif user_string[0].islower():  # does username start with lowercase letter?
+#         new_string += user_string
+#         print("username starts with lowercase letter.")
+#         print(new_string)
+#         continue
+#     elif not user_string.isalnum():
+#         print("Looks like a special character, lets continue")
+#         continue
+#     elif user_string[0].islower():  # does username start with lowercase letter?
+#         new_string = re.search('[_]', user_string)
+#         print("username contains _.")
+#         print(new_string)
+#         continue
+# elif not user_string.isalnum() == ['admin', 'admin123', 'root']:
+#         print("Looks like a special character, lets continue")
+#         continue
+# print("Have a nice day")
+
+# make it if they 
+# code from class today
+
 
 
 
