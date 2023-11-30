@@ -1,3 +1,5 @@
+import re 
+
 # Do I need any modules? If so, as a best practice, import them at the top of the file
 
 '''
@@ -55,8 +57,15 @@ while True:
     if username[0].islower() == False:              # test for first character lower case
        print("Invalid username")
        continue
-
-    print("I am here")
+    
+    test_username_match = re.fullmatch('[a-z0-9A-Z_]+',username)
+  
+    if test_username_match:
+        print("Invalid username")
+        continue
+    
+    
+    # print("I am here")
 
 
 
