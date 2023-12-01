@@ -13,21 +13,21 @@ If they are both valid, store them as variables. Then ask the user to log in usi
 '''
 # Print statement to inform the user of the username & password requirements.
 
-# print("Please follow these requirements when creating your account. \n"
-#                      "USERNAME REQUIREMENTS: \n"
-#                      "-Must start with a lowercase letter. \n" 
-#                      "-Only contain letters, numbers and underscores. \n\n" 
+print("You must follow these requirements when creating your account. \n"
+                     "USERNAME REQUIREMENTS: \n"
+                     "-Must start with a lowercase letter. \n" 
+                     "-Only contain letters, numbers and underscores. \n\n" 
                      
-#                      "PASSWORD REQUIREMENTS:\n"
-#                      "-Contain at least 8 characters.\n"
-#                      "-Contain at least one uppercase letter.\n"
-#                     "-Contain at least one lowercase letter.\n"
-#                      "-Contain at least one digit.\n"
-#                      "-Contain at least one of these characters: !, ?, @, #, $, ^, &, *, _, -, \n"
-#                      "-Doesn't contain any spaces")
+                     "PASSWORD REQUIREMENTS:\n"
+                     "-Contain at least 8 characters.\n"
+                     "-Contain at least one uppercase letter.\n"
+                    "-Contain at least one lowercase letter.\n"
+                     "-Contain at least one digit.\n"
+                     "-Contain at least one of these characters: !, ?, @, #, $, ^, &, *, _, -, \n"
+                     "-Doesn't contain any spaces")
 
 
-# Define messages as variables
+# Define print messages as variables
 
 # Set invalid username error message as a variable
 invalid_username = "Invalid username"
@@ -44,11 +44,14 @@ successful_signup = "Sign up successful!"
 # Set incorrect username or password message as a variable
 incorrect_login = "Incorrect username or password"
 
+# Set login successful message as a variable
+login_successful = "Login successful!"
+
 while True:      # start while loop for user to enter new username & password credentials, check validity and if they pass all checks, prompt them to sign into the website. 
 
-    new_username = input('Please enter a username: ')    # get user to enter new username
-    new_password = input('Please enter a password: ')    # get user to enter new password
-    taken_names = ['admin', 'admin123', 'root']          # list of taken usernames
+    new_username = input('Please enter a new username: ')    # get user to enter new username
+    new_password = input('Please enter a new password: ')    # get user to enter new password
+    taken_names = ['admin', 'admin123', 'root']              # list of taken usernames
 
 
     if new_username in taken_names:                 # username test if already taken
@@ -64,7 +67,9 @@ while True:      # start while loop for user to enter new username & password cr
         print(invalid_username)
         
 
-    SpecialChara = ['!', '?', '@', '#', '$', '^', '&', '*', '_', '-']    # Begin password testing with function
+    SpecialChara = ['!', '?', '@', '#', '$', '^', '&', '*', '_', '-']    # define list for password required special characters
+    
+    # Begin password testing
         
     if len(new_password) <= 8:                                       # test for at least 8 charaters
         print(invalid_password)
@@ -74,60 +79,34 @@ while True:      # start while loop for user to enter new username & password cr
         continue
     if not any(char.isupper() for char in new_password):             # test for at least one uppercase letter
         print(invalid_password)
-
+        continue
     if not any(char.islower() for char in new_password):             # test for at least one lowercase letter
         print(invalid_password)
-
+        continue
     if not any(char in SpecialChara for char in new_password):       # test for at least one special charater
         print(invalid_password)
-
+        continue
     if new_password.count(' ') != 0:                                 # test for blank spaces
         print(invalid_password)
 
     else:
-        print(successful_signup)
-
-    print("Please enter your username and password: ")
+        print(successful_signup)                                     # informing user of successful signup
+                                   
+    print("Please enter your username and password: ")               # prompting user to login to website with the newly created valid credentials 
     
-    sys_username = input('Enter username: ')
-    sys_password = input('Enter password: ')
+    sys_username = input('Enter username: ')                         # setting variable to hold username
+    sys_password = input('Enter password: ')                         # setting variable to hold password 
 
-    if sys_username == new_username and sys_password == new_password:
-        print("Login successful")
-        break
+    if sys_username == new_username and sys_password == new_password:  # comparing newly created username & password to what they entered when signing into the website
+        print(login_successful)                                        # if newly created matches what they enter on login, print login successful message. 
+                                                                       #If not, prompt them to enter username and password again.
+        break                                                          # End program
         
 
     
   
        
-    
 
-#   Doesn’t contain any spaces
-    
-
-# Problem: How are we testing the username requirements?
-# Solution(s): It must start with a lowercase letter and only contain letters, numbers, and underscores.
-#   -String methods? Regular Expression? Both are acceptable solutions. Regex is more advanced and will save you a few lines of code
-# Test, push code, test push code, test push code :)
-
-
-
-# Problem: How are we testing password requirements?
-# Solution(s): At least 8 characters long
-#   Contains at least one uppercase letter
-#   Contains at least one lowercase letter
-#   Contains at least one digit
-#   Contains at least one of these characters: !, ?, @, #, $, ^, &, *, _, -
-#   Doesn’t contain any spaces
-#   -String methods? Regular Expression? Both are acceptable solutions. Regex is more advanced and will save you a few lines of code
-# Test, push code, test push code, test push code :)
-
-
-# Problem: How are we handling login process after successful sign up?
-# Solution: With the assumption that after testing, the username and password fulfill requirements, 
-# we can reassign these values to more descriptive variables that are meant for the sign in and do a final test with a simple if else. 
-# Ternary operators are off the table as they cannot be used in a conditional expression.
-# Test, push code, test push code, test push code :)
 
 
 '''
