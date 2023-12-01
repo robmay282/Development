@@ -1,4 +1,9 @@
-import re 
+import re # imported regular expressions to use for testing
+
+# Robin Maynard
+# Intro to Programming Fall 2023
+# Project 1
+# Due Date 12/1/23
 
 '''
 Project Description: Website Sign-Up
@@ -6,6 +11,7 @@ In this project, you will write a program that prompts a user to sign up for a w
 There are requirements for both the username and password. If either one doesn’t meet the requirements, print an appropriate error message and ask the username for a new username and password.
 If they are both valid, store them as variables. Then ask the user to log in using the username and password they chose.
 '''
+# Print statement to inform the user of the username & password requirements.
 
 # print("Please follow these requirements when creating your account. \n"
 #                      "USERNAME REQUIREMENTS: \n"
@@ -38,18 +44,11 @@ successful_signup = "Sign up successful!"
 # Set incorrect username or password message as a variable
 incorrect_login = "Incorrect username or password"
 
+while True:      # start while loop for user to enter new username & password credentials, check validity and if they pass all checks, prompt them to sign into the website. 
 
-# Problem: The user must be continuously prompted for input.
-# Solution(s): What tools do we have in place to facilitate this? If-then-else statements in conjunction with a while loop. 
-# Test, push code, test push code, test push code :)
-
-
-
-while True:
-
-    new_username = input('Please enter a username: ')    # get username
-    new_password = input('Please enter a password: ')    # get password
-    taken_names = ['admin', 'admin123', 'root']          # list oftaken name list
+    new_username = input('Please enter a username: ')    # get user to enter new username
+    new_password = input('Please enter a password: ')    # get user to enter new password
+    taken_names = ['admin', 'admin123', 'root']          # list of taken usernames
 
 
     if new_username in taken_names:                 # username test if already taken
@@ -69,21 +68,34 @@ while True:
         
     if len(new_password) <= 8:                                       # test for at least 8 charaters
         print(invalid_password)
-          
+        continue
     if not any(char.isdigit() for char in new_password):             # test for at least one digit
-       print(invalid_password)
-
+        print(invalid_password)
+        continue
     if not any(char.isupper() for char in new_password):             # test for at least one uppercase letter
-       print(invalid_password)
+        print(invalid_password)
 
     if not any(char.islower() for char in new_password):             # test for at least one lowercase letter
-       print(invalid_password)
+        print(invalid_password)
 
     if not any(char in SpecialChara for char in new_password):       # test for at least one special charater
-       print(invalid_password)
+        print(invalid_password)
+
+    if new_password.count(' ') != 0:                                 # test for blank spaces
+        print(invalid_password)
 
     else:
         print(successful_signup)
+
+    print("Please enter your username and password: ")
+    
+    sys_username = input('Enter username: ')
+    sys_password = input('Enter password: ')
+
+    if sys_username == new_username and sys_password == new_password:
+        print("Login successful")
+        break
+        
 
     
   
@@ -112,7 +124,9 @@ while True:
 
 
 # Problem: How are we handling login process after successful sign up?
-# Solution: With the assumption that after testing, the username and password fulfill requirements, we can reassign these values to more descriptive variables that are meant for the sign in and do a final test with a simple if else. Ternary operators are off the table as they cannot be used in a conditional expression.
+# Solution: With the assumption that after testing, the username and password fulfill requirements, 
+# we can reassign these values to more descriptive variables that are meant for the sign in and do a final test with a simple if else. 
+# Ternary operators are off the table as they cannot be used in a conditional expression.
 # Test, push code, test push code, test push code :)
 
 
