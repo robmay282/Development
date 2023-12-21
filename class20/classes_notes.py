@@ -77,6 +77,11 @@ my_fifth_point = Point2d(100, 150)
 # print(my_second_point.get_y())
 # print(my_fifth_point.get_y())
 
+# Lets look at defalt parameters
+default_object + Point2d()
+print(default_object)
+
+default_object.set_x
 # Mutator Method
 # print(my_fifth_point)
 # my_fifth_point.set_x(120) # mutator method changes x
@@ -94,22 +99,22 @@ Accessor and mutator methods (get and set) for all attributes.
 Test organize and document your class
 '''
 
-class Date:
+# class Date:
 
-    def __init__(self, year=1970, month=1, day=1):
-        self.year = year
-        self.month = month
-        self.day = day
+#     def __init__(self, year=1970, month=1, day=1):
+#         self.year = year
+#         self.month = month
+#         self.day = day
     
-    def __str__(self):
-        pass
+#     def __str__(self):
+#         pass
 
-    def __eq__(self, other):
-        pass
+#     def __eq__(self, other):
+#         pass
 
-    def __lt__(self, other):
-        pass
+#     def __lt__(self, other):
+#         pass
 
-    def is_leap_year(self):
-         pass
+#     def is_leap_year(self):
+#          pass
 

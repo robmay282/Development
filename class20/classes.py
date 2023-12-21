@@ -27,3 +27,10 @@ class Date:
     def is_leap_year(self):
          pass
 
+
+
+
+
+
+class Dog:
+        pass

@@ -82,23 +82,55 @@ If the user inputs a negative number, raise a ValueError that will also be caugh
 '''
 
 # Propogating exceptions (functions)
-
+# while True:
+#     try:
+#         user_input = float(input("Please enter your number: "))
+#     if user_input < 0:
+#         raise ValueError
+#     except ValueError
+#         print("You must enter a float and it cannot be negative")
+#     else:
+#     result = math.sqrt(user_input)
+#         print(result)
+#     break
 
 
 # Function that calculates average of two numbers
 
 
+# def average_two_nums(num1, num2):
+#     return (num1 + num2) / 2
+
+# try:
+#     print(average_two_nums(5, 3))
+# except:
+#     print("We can catch the error in the function call")
+
+
 '''
 Exercise
-You have been assigned the task of creating a sales tax calculator for an e-commerce company. Write a Python function called calculate_final_price that takes the price of a product and the sales tax rate, and return the final price including tax.
-The price should be a positive number, and the tax rate should be between 0 and 1 (exclusive). If either of them are outside of the valid range, raise a custom ValueError with an appropriate error message.
-Now, test your implementation by asking the user to input a product price and sales tax rate, and call your function. Catch any potential ValueError raised by the function.
+You have been assigned the task of creating a sales tax calculator for an e-commerce company. 
+Write a Python function called calculate_final_price that takes the price of a product and the sales tax rate, 
+and return the final price including tax.
+The price should be a positive number, and the tax rate should be between 0 and 1 (exclusive). 
+If either of them are outside of the valid range, raise a custom ValueError with an appropriate error message.
+Now, test your implementation by asking the user to input a product price and sales tax rate, 
+and call your function. Catch any potential ValueError raised by the function.
 '''
 
+def calculate_final_price(price, sales_tax_rate):
+
+    if price <= 1: # Interval Comparison
+        raise ValueError("Tax must be between 0 & 1")
+    
+    total_tax = price * sales_tax_rate
+    return print + total_tax
 
 
 
-
+# Interval comparison
+# if 100 <= my_value <= 200:
+#     pass
 
 
 
