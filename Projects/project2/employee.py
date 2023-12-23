@@ -16,7 +16,7 @@ Test organize and document your class'''
 # Define Employee Class including constructor and attributes.
 
 class Employee:
- # document constructor
+ # Constructor 
     def __init__(self, name, job_title, department, salary, hire_year):
          self.name = name
          self.job_title = job_title
@@ -95,16 +95,6 @@ print(employee_c)
 print(employee_c.total_expense())
 
 
-
-
-
-
-# Accessor and mutator methods (get and set) for all attributes.
-
-
-
-
-# Test organize and document your class
 
 
 
