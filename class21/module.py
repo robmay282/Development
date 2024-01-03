@@ -19,8 +19,8 @@ class BankAccount:
     def deposit_funds(self, amount):
         t = {'owner': self.owner, 'type': 'deposit', 'amount': amount}
         self.transactions.append(t)
-        
-        print(self.transactions)
+        return self.transactions
+        #print(self.transactions)
 
     # # withdraw_funds()
     # def __withdraw_funds__(self):
@@ -47,10 +47,12 @@ class BankAccount:
     #     pass
 
 # create my class instance
-my_bank_account = BankAccount('jean', 4000)
+jeans_account = BankAccount('jean', 4000)
+majestic_account = BankAccount('majestic', 5000)
 # testing __str__
-print(my_bank_account)
+print(jeans_account)
 
 #testing deposit
-my_bank_account.deposit_funds(50)
-my_bank_account.deposit_funds(200)
+jeans_account.deposit_funds(50)
+jeans_account.deposit_funds(200)
+majestic_account.deposit_funds(200)
