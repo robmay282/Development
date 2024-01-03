@@ -12,8 +12,8 @@ class BankAccount:
         pass
 
     # # _str_
-    # def __str__(self):
-    #     pass
+    def __str__(self):
+        return f'Owner: {self.owner}\nOpening Balance: {self.balance}'
 
     # # deposit_funds()
     # def __deposit_funds__(self):
@@ -43,6 +43,7 @@ class BankAccount:
     # def __save_transaction__(self):
     #     pass
 
-
+# create my class instance
 my_bank_account = BankAccount('jean', 4000)
+# testing __str__
 print(my_bank_account)
